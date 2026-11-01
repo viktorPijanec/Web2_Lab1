@@ -1,0 +1,19 @@
+{
+    "sqltools.connections": [
+        {
+            "pgOptions": {
+                "ssl": {
+                    "rejectUnauthorized": true
+                }
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "dpg-dbho7tu7bikc73f4v1i0-a.frankfurt-postgres.render.com",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "lab1-postgres",
+            "database": "lab1_postgres_sm4i",
+            "username": "lab1postgres_iahp_user"
+        }
+    ]
+}

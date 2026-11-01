@@ -8,10 +8,32 @@ html
             li: a(href='/', title='Home') Home
             li Broj propusnica: #{passCount}
             li Broj aktivnih propusnica: #{activePassCount}
-            //li: a(href='/private') Private content             
             if username
                 li: form(action="/logout", method="post")
                     input(type="submit", value="Logout " + username)
+                if passes.length > 0
+                    table
+                        thead
+                            tr
+                                th Ime
+                                th Dokument
+                                th Vrijeme izdavanja
+                                th Status
+                                th Akcija
+                        tbody
+                            each pass in passes
+                                tr
+                                    td #{pass.name}
+                                    td #{pass.document}
+                                    td #{new Date(pass.issued_at).toLocaleString()}
+                                    td #{pass.status}
+                                    td 
+                                        if pass.status === 'ACTIVE'
+                                            form(action=`/passes/${pass.id}/cancel`, method="post")
+                                                button(type="submit") Poništi
+                                        form(action=`/passes/${pass.id}/delete`, method="post")
+                                            button(type="submit") Obriši
+                else
+                    p Nema propusnica.
             else
-                li: a(href='/sign-up', title='Sign up') Sign up 
-            
+                li: a(href='/login') Login

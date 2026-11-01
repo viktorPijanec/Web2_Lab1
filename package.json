@@ -7,14 +7,19 @@
     "start": "node dist/08-webapp.js"
   },
   "dependencies": {
-    "dotenv": "^18.0.5",
+    "dotenv": "^18.0.7",
     "express": "^5.2.1",
+    "express-oauth2-jwt-bearer": "^1.11.0",
     "express-openid-connect": "^3.4.0",
-    "pug": "^3.0.4"
+    "pg": "^8.23.1",
+    "pug": "^3.0.4",
+    "qrcode": "^1.5.4"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
     "@types/node": "^24.0.0",
+    "@types/pg": "^8.23.1",
+    "@types/qrcode": "^1.5.6",
     "shx": "^0.4.0",
     "typescript": "^7.0.2"
   }
